@@ -1,0 +1,357 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1800" width="1400" height="1800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="stateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+    <linearGradient id="layerGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="layerGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d1fae5"/>
+      <stop offset="100%" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="layerGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fce7f3"/>
+      <stop offset="100%" stop-color="#fbcfe8"/>
+    </linearGradient>
+    <linearGradient id="layerGrad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e0e7ff"/>
+      <stop offset="100%" stop-color="#c7d2fe"/>
+    </linearGradient>
+    <linearGradient id="layerGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fee2e2"/>
+      <stop offset="100%" stop-color="#fecaca"/>
+    </linearGradient>
+    <linearGradient id="layerGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffedd5"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="layerGrad7" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="100%" stop-color="#e9d5ff"/>
+    </linearGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1400" height="1800" fill="url(#bgGrad)"/>
+
+  <!-- 标题 -->
+  <text x="700" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" fill="#1e293b">Canvas 七层叠加渲染管线数据流图</text>
+  <text x="700" y="72" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#64748b">手写字模拟器 · 分层渲染架构</text>
+
+  <!-- ====== 状态源区域 ====== -->
+  <rect x="40" y="95" width="1320" height="140" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="120" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#334155">useWorkspaceStore (Zustand 状态源)</text>
+
+  <!-- 状态卡片 -->
+  <rect x="60" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="130" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">纸张配置</text>
+  <text x="130" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">bgColor / lineColor</text>
+  <text x="130" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">lineSpacing / type</text>
+
+  <rect x="220" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="290" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">字体配置</text>
+  <text x="290" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">fontFamily / fontSize</text>
+  <text x="290" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">inkColor / letterSpacing</text>
+
+  <rect x="380" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="450" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">抖动参数</text>
+  <text x="450" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">13种抖动维度</text>
+  <text x="450" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">amount / halo / dryBrush</text>
+
+  <rect x="540" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="610" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">文本内容</text>
+  <text x="610" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">rawText</text>
+  <text x="610" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">markdownEnabled</text>
+
+  <rect x="700" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="770" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">签名数据</text>
+  <text x="770" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">signatures[]</text>
+  <text x="770" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">signaturePlacements[]</text>
+
+  <rect x="860" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="930" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">印章数据</text>
+  <text x="930" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">stamps[]</text>
+  <text x="930" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">stampPlacements[]</text>
+
+  <rect x="1020" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="1090" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">批注数据</text>
+  <text x="1090" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">annotations[]</text>
+  <text x="1090" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">path / shape / text</text>
+
+  <rect x="1180" y="135" width="140" height="80" rx="8" fill="url(#stateGrad)" stroke="#93c5fd" stroke-width="1"/>
+  <text x="1250" y="160" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af">装饰数据</text>
+  <text x="1250" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">decorationPlacements[]</text>
+  <text x="1250" y="195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3b82f6">SVG矢量图案</text>
+
+  <!-- 箭头：状态源 → 渲染状态聚合 -->
+  <line x1="700" y1="235" x2="700" y2="260" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== RenderState 聚合 ====== -->
+  <rect x="500" y="265" width="400" height="55" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="295" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="white">useMemo 聚合 → RenderState</text>
+  <text x="700" y="312" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">字体栈构建 · 纸张预设解析 · 抖动参数聚合 · 边距计算</text>
+
+  <!-- 箭头：聚合 → 分支 -->
+  <line x1="700" y1="320" x2="700" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== 三条并行分支 ====== -->
+  <rect x="40" y="360" width="380" height="90" rx="10" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="230" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#334155">图片预加载</text>
+  <text x="230" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">loadSignatureImages()</text>
+  <text x="230" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">loadStampImages() / loadDecorationImages()</text>
+
+  <rect x="510" y="360" width="380" height="90" rx="10" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="700" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#334155">文本排版</text>
+  <text x="700" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">breakTextIntoLines() → 逐字测量宽度</text>
+  <text x="700" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">paginate() → 按可用高度分页</text>
+
+  <rect x="980" y="360" width="380" height="90" rx="10" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1170" y="385" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#334155">页面计算</text>
+  <text x="1170" y="405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">computePages() / computeMarkdownPages()</text>
+  <text x="1170" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#64748b">totalPages 状态更新</text>
+
+  <!-- 汇聚箭头 -->
+  <line x1="230" y1="450" x2="230" y2="470" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="700" y1="450" x2="700" y2="470" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="1170" y1="450" x2="1170" y2="470" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="230" y1="470" x2="1170" y2="470" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="700" y1="470" x2="700" y2="490" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ====== 核心渲染函数 ====== -->
+  <rect x="450" y="495" width="500" height="55" rx="12" fill="url(#coreGrad)" stroke="#334155" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="522" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#fbbf24">renderToCanvas(canvas, pageIdx)</text>
+  <text x="700" y="542" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">核心渲染入口 · DPR缩放 · 七层顺序绘制</text>
+
+  <!-- ====== 七层渲染管线（核心） ====== -->
+  <rect x="40" y="575" width="1320" height="1080" rx="16" fill="white" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="60" y="605" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#334155">七层叠加渲染管线（从底到顶）</text>
+  <text x="1300" y="605" text-anchor="end" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">每层依次绘制，后层覆盖前层</text>
+
+  <!-- 第1层：纸张层 -->
+  <rect x="60" y="625" width="1280" height="130" rx="10" fill="url(#layerGrad1)" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle cx="90" cy="645" r="16" fill="#f59e0b"/>
+  <text x="90" y="650" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">1</text>
+  <text x="120" y="642" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#92400e">纸张层 (Paper Layer)</text>
+  <text x="120" y="660" font-family="system-ui, sans-serif" font-size="11" fill="#b45309">drawPaper(ctx, renderState)</text>
+
+  <rect x="120" y="675" width="180" height="65" rx="6" fill="white" stroke="#fcd34d" stroke-width="1"/>
+  <text x="210" y="695" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#78350f">背景填充</text>
+  <text x="210" y="712" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">纯色 / 渐变(kraft纸)</text>
+  <text x="210" y="728" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">ctx.fillRect()</text>
+
+  <rect x="315" y="675" width="180" height="65" rx="6" fill="white" stroke="#fcd34d" stroke-width="1"/>
+  <text x="405" y="695" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#78350f">纸张纹理</text>
+  <text x="405" y="712" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">横线 / 网格 / 点阵 / 空白</text>
+  <text x="405" y="728" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">switch(paperType)</text>
+
+  <rect x="510" y="675" width="180" height="65" rx="6" fill="white" stroke="#fcd34d" stroke-width="1"/>
+  <text x="600" y="695" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#78350f">装订线</text>
+  <text x="600" y="712" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">红色装订线 + 三个打孔</text>
+  <text x="600" y="728" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">showMargin 控制</text>
+
+  <rect x="705" y="675" width="180" height="65" rx="6" fill="white" stroke="#fcd34d" stroke-width="1"/>
+  <text x="795" y="695" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#78350f">噪点纹理</text>
+  <text x="795" y="712" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">线性渐变模拟微弱噪点</text>
+  <text x="795" y="728" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">rgba(61,41,20,0.025~0.04)</text>
+
+  <rect x="900" y="675" width="180" height="65" rx="6" fill="white" stroke="#fcd34d" stroke-width="1"/>
+  <text x="990" y="695" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#78350f">输出</text>
+  <text x="990" y="712" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">794×1123 CSS像素</text>
+  <text x="990" y="728" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#92400e">1588×2246 物理像素 (DPR=2)</text>
+
+  <!-- 层间箭头 -->
+  <line x1="700" y1="755" x2="700" y2="770" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 第2层：文字层 -->
+  <rect x="60" y="780" width="1280" height="130" rx="10" fill="url(#layerGrad2)" stroke="#10b981" stroke-width="1.5"/>
+  <circle cx="90" cy="800" r="16" fill="#10b981"/>
+  <text x="90" y="805" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">2</text>
+  <text x="120" y="797" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#065f46">文字层 (Text Layer)</text>
+  <text x="120" y="815" font-family="system-ui, sans-serif" font-size="11" fill="#047857">drawHandwrittenPage() / drawMarkdownPage()</text>
+
+  <rect x="120" y="830" width="180" height="65" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="210" y="850" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#064e3b">文本分行</text>
+  <text x="210" y="867" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">breakTextIntoLines()</text>
+  <text x="210" y="883" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">离屏canvas测量字符宽度</text>
+
+  <rect x="315" y="830" width="180" height="65" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="405" y="850" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#064e3b">分页处理</text>
+  <text x="405" y="867" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">paginate()</text>
+  <text x="405" y="883" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">按可用高度分配行到各页</text>
+
+  <rect x="510" y="830" width="180" height="65" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="600" y="850" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#064e3b">13种抖动计算</text>
+  <text x="600" y="867" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">seededRandom() 确定性随机</text>
+  <text x="600" y="883" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">每页独立种子: pageIndex*100001+17</text>
+
+  <rect x="705" y="830" width="180" height="65" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="795" y="850" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#064e3b">逐字绘制</text>
+  <text x="795" y="867" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">位置/大小/旋转/墨水/光晕/干笔刷</text>
+  <text x="795" y="883" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">ctx.fillText() 逐字符渲染</text>
+
+  <rect x="900" y="830" width="180" height="65" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="990" y="850" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#064e3b">Markdown扩展</text>
+  <text x="990" y="867" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">标题/加粗/斜体/代码/引用/列表</text>
+  <text x="990" y="883" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#065f46">layoutMarkdown() 块级排版</text>
+
+  <!-- 层间箭头 -->
+  <line x1="700" y1="910" x2="700" y2="925" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 第3层：滤镜层 -->
+  <rect x="60" y="935" width="1280" height="100" rx="10" fill="url(#layerGrad3)" stroke="#ec4899" stroke-width="1.5"/>
+  <circle cx="90" cy="955" r="16" fill="#ec4899"/>
+  <text x="90" y="960" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">3</text>
+  <text x="120" y="952" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#831843">滤镜层 (Filter Layer)</text>
+  <text x="120" y="970" font-family="system-ui, sans-serif" font-size="11" fill="#be185d">applyFilter(ctx, filter, intensity, inkColor) · getImageData/putImageData 像素级操作</text>
+
+  <rect x="120" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="185" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">inkBleed 墨水晕染</text>
+
+  <rect x="260" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="325" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">pencilSketch 铅笔素描</text>
+
+  <rect x="400" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="465" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">penStroke 钢笔笔触</text>
+
+  <rect x="540" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="605" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">brushStroke 毛笔笔触</text>
+
+  <rect x="680" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="745" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">watercolor 水彩效果</text>
+
+  <rect x="820" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="885" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">carbonCopy 复写纸</text>
+
+  <rect x="960" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="1025" y="1005" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">fountainPen 钢笔尖</text>
+
+  <rect x="1100" y="980" width="130" height="40" rx="6" fill="white" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="1165" y="1000" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">crayon 蜡笔</text>
+  <text x="1165" y="1013" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#9d174d">marker 马克笔</text>
+
+  <!-- 层间箭头 -->
+  <line x1="700" y1="1035" x2="700" y2="1050" stroke="#ef4444" stroke-width="2.5" marker-end="url(#arrow2)"/>
+  <text x="720" y="1045" font-family="system-ui, sans-serif" font-size="10" fill="#ef4444" font-weight="bold">关键设计：滤镜只作用于纸张+文字，不影响后续叠加层</text>
+
+  <!-- 第4层：签名层 -->
+  <rect x="60" y="1060" width="1280" height="80" rx="10" fill="url(#layerGrad4)" stroke="#6366f1" stroke-width="1.5"/>
+  <circle cx="90" cy="1080" r="16" fill="#6366f1"/>
+  <text x="90" y="1085" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">4</text>
+  <text x="120" y="1077" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#312e81">签名层 (Signature Layer)</text>
+  <text x="120" y="1095" font-family="system-ui, sans-serif" font-size="11" fill="#4338ca">drawSignaturesForPage() · 手写签名图片 · 可选纸张背景 · drawImage() 叠加</text>
+
+  <rect x="900" y="1070" width="200" height="55" rx="6" fill="white" stroke="#a5b4fc" stroke-width="1"/>
+  <text x="1000" y="1090" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#312e81">签名数据结构: id / dataUrl(PNG)</text>
+  <text x="1000" y="1105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#312e81">放置: x / y / scale / pageIndex</text>
+  <text x="1000" y="1120" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#312e81">可选: bgOpacity / paperType 背景</text>
+
+  <!-- 层间箭头 -->
+  <line x1="700" y1="1140" x2="700" y2="1155" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 第5层：印章层 -->
+  <rect x="60" y="1165" width="1280" height="80" rx="10" fill="url(#layerGrad5)" stroke="#ef4444" stroke-width="1.5"/>
+  <circle cx="90" cy="1185" r="16" fill="#ef4444"/>
+  <text x="90" y="1190" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">5</text>
+  <text x="120" y="1182" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#7f1d1d">印章层 (Stamp Layer)</text>
+  <text x="120" y="1200" font-family="system-ui, sans-serif" font-size="11" fill="#b91c1c">drawStampsForPage() · 圆形/椭圆/方形 · 弧形文字 · 五角星 · multiply混合模式</text>
+
+  <rect x="900" y="1175" width="200" height="55" rx="6" fill="white" stroke="#fca5a5" stroke-width="1"/>
+  <text x="1000" y="1195" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7f1d1d">renderStampToCanvas() 离屏渲染</text>
+  <text x="1000" y="1210" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7f1d1d">drawStampNoise() 印章噪点质感</text>
+  <text x="1000" y="1225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7f1d1d">globalCompositeOperation='multiply'</text>
+
+  <!-- 层间箭头 -->
+  <line x1="700" y1="1245" x2="700" y2="1260" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 第6层：批注层 -->
+  <rect x="60" y="1270" width="1280" height="80" rx="10" fill="url(#layerGrad6)" stroke="#f97316" stroke-width="1.5"/>
+  <circle cx="90" cy="1290" r="16" fill="#f97316"/>
+  <text x="90" y="1295" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">6</text>
+  <text x="120" y="1287" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#7c2d12">批注层 (Annotation Layer)</text>
+  <text x="120" y="1305" font-family="system-ui, sans-serif" font-size="11" fill="#c2410c">drawAnnotationsForPage() · 自由路径 / 形状 / 线条箭头 / 下划线 / 波浪线 / 文字批注</text>
+
+  <rect x="900" y="1280" width="200" height="55" rx="6" fill="white" stroke="#fdba74" stroke-width="1"/>
+  <text x="1000" y="1300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7c2d12">path / highlight / rect / circle</text>
+  <text x="1000" y="1315" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7c2d12">line / arrow / underline / wavy</text>
+  <text x="1000" y="1330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#7c2d12">text 文字批注</text>
+
+  <!-- 层间箭头 -->
+  <line x1="700" y1="1350" x2="700" y2="1365" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 第7层：装饰层 -->
+  <rect x="60" y="1375" width="1280" height="80" rx="10" fill="url(#layerGrad7)" stroke="#a855f7" stroke-width="1.5"/>
+  <circle cx="90" cy="1395" r="16" fill="#a855f7"/>
+  <text x="90" y="1400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">7</text>
+  <text x="120" y="1392" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#581c87">装饰层 (Decoration Layer)</text>
+  <text x="120" y="1410" font-family="system-ui, sans-serif" font-size="11" fill="#7e22ce">drawDecorationsForPage() · SVG矢量图案 · 旋转/缩放/透明度 · 缓存加载降级策略</text>
+
+  <rect x="900" y="1385" width="200" height="55" rx="6" fill="white" stroke="#d8b4fe" stroke-width="1"/>
+  <text x="1000" y="1405" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#581c87">SVG → Blob → Image 预加载</text>
+  <text x="1000" y="1420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#581c87">缓存命中 → 即时加载 → 占位矩形</text>
+  <text x="1000" y="1435" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#581c87">ctx.drawImage() + rotate/scale</text>
+
+  <!-- 最终输出 -->
+  <line x1="700" y1="1455" x2="700" y2="1475" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="450" y="1485" width="500" height="50" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="1512" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#22d3ee">最终 Canvas 输出</text>
+  <text x="700" y="1530" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">实时预览显示 · 导出PNG/PDF · renderAllCanvases() 批量离屏渲染</text>
+
+  <!-- ====== 底部关键技术设计 ====== -->
+  <rect x="40" y="1560" width="1320" height="220" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="60" y="1590" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#334155">关键技术设计</text>
+
+  <!-- DPR -->
+  <rect x="60" y="1605" width="280" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="200" y="1625" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#334155">DPR 高清晰度渲染</text>
+  <text x="200" y="1643" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">物理像素 = CSS像素 × DPR (DPR=2)</text>
+  <text x="200" y="1658" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">ctx.setTransform(DPR, 0, 0, DPR, 0, 0)</text>
+  <text x="200" y="1673" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">1588×2246 物理 / 794×1123 CSS</text>
+
+  <!-- 种子随机 -->
+  <rect x="360" y="1605" width="280" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="500" y="1625" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#334155">种子随机数 (Seeded Random)</text>
+  <text x="500" y="1643" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">seededRandom() 实现确定性抖动</text>
+  <text x="500" y="1658" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">每页独立种子: pageIndex × 100001 + 17</text>
+  <text x="500" y="1673" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">保证同一页面每次渲染效果完全一致</text>
+
+  <!-- 滤镜位置 -->
+  <rect x="660" y="1605" width="280" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="800" y="1625" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#334155">滤镜层的特殊位置</text>
+  <text x="800" y="1643" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">滤镜在「文字层之后、签名层之前」</text>
+  <text x="800" y="1658" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">只作用于「手写内容」(纸张+文字)</text>
+  <text x="800" y="1673" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">签名/印章/批注/装饰不受滤镜影响</text>
+
+  <!-- 状态驱动 -->
+  <rect x="960" y="1605" width="380" height="80" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="1150" y="1625" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#334155">状态驱动的响应式渲染</text>
+  <text x="1150" y="1643" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Zustand 状态管理 + React hooks</text>
+  <text x="1150" y="1658" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">useMemo 优化 RenderState 计算</text>
+  <text x="1150" y="1673" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">useEffect 监听依赖自动调用 renderToCanvas</text>
+
+  <!-- 批量导出 -->
+  <rect x="60" y="1695" width="1280" height="65" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="700" y="1718" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#334155">离屏渲染与批量导出</text>
+  <text x="700" y="1738" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">renderAllCanvases() 创建离屏canvas → 逐页渲染所有七层 → 返回canvas数组供PNG/PDF导出 → 与实时预览共享同一套渲染逻辑</text>
+  <text x="700" y="1753" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">文件位置: useHandwritingRender.ts (renderToCanvas L611 / renderAllCanvases L660) · filterEffects.ts · signatureRenderer.ts · stampRenderer.ts · annotationRenderer.ts · decorationRenderer.ts</text>
+</svg>
